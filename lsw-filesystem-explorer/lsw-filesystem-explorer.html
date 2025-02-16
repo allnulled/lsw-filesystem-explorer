@@ -1,0 +1,29 @@
+<div class="lsw_filesystem_explorer">
+    <div class="current_node_box">
+        <span class="previous_node_path" v-if="current_node !== '/'">
+            <button class="mini previous_node_button" v-on:click="go_up">◀</button>
+        </span>
+        <span class="current_node_path">{{ current_node_basedir }}</span>
+        <span class="current_node_filename">{{ current_node_basename }}</span>
+    </div>
+    <div class="filesystem_ui">
+        <div class="leftside">
+            <lsw-filesystem-buttons-panel :explorer="this" />
+        </div>
+        <div class="middleside">
+            <div class="headerside">
+                <lsw-filesystem-buttons-panel :explorer="this" />
+            </div>
+            <div class="bodyside">
+                <lsw-filesystem-treeviewer v-if="current_node_is_directory" :explorer="this" ref="treeviewer" />
+                <lsw-filesystem-editor v-else-if="current_node_is_file" :explorer="this" ref="editor" :filecontents="current_node_contents" />
+            </div>
+            <div class="footerside">
+                <lsw-filesystem-buttons-panel :explorer="this" />
+            </div>
+        </div>
+        <div class="rightside">
+            <lsw-filesystem-buttons-panel :explorer="this" />
+        </div>
+    </div>
+</div>

@@ -1,9 +1,4 @@
-/*
-  @artifact:  Lite Starter Web Dependency
-  @url:       https://github.com/allnulled/lsw-filesystem-explorer.git
-  @name:      @allnulled/lsw-filesystem-explorer
-  @version:   1.0.0
-*/(function(factory) {
+(function(factory) {
   const mod = factory();
   if(typeof window !== 'undefined') {
     window["Lsw_filesystem_explorer_components"] = mod;
@@ -316,4 +311,3 @@ Vue.component("LswFilesystemTreeviewer", {
   }
 });
 });
-

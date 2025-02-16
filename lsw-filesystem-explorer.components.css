@@ -1,9 +1,4 @@
-/*
-  @artifact:  Lite Starter Web Dependency
-  @url:       https://github.com/allnulled/lsw-filesystem-explorer.git
-  @name:      @allnulled/lsw-filesystem-explorer
-  @version:   1.0.0
-*/.lsw_filesystem_buttons_panel {}
+.lsw_filesystem_buttons_panel {}
 .lsw_filesystem_editor {
     position: absolute;
     top: 0;
@@ -153,4 +148,3 @@ table.filesystem_treeviewer_table > tbody > tr > td:nth-child(1) {
 table.filesystem_treeviewer_table > tbody > tr > td:nth-child(2) {
     width: 100%;
 }
-
