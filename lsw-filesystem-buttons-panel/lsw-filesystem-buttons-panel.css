@@ -1,1 +1,10 @@
-.lsw_filesystem_buttons_panel {}
+.lsw_filesystem_buttons_panel {
+    width: 100%;
+    height: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.lsw_filesystem_buttons_panel > .buttons_panel {
+    width: 100%;
+    height: 100%;
+}

@@ -13,14 +13,19 @@ Vue.component("LswFilesystemEditor", {
   },
   data() {
     return {
-      
+      contents: this.filecontents
     };
   },
   watch: {
 
   },
   methods: {
-
+    getContents() {
+      return this.contents;
+    },
+    setContents(contents) {
+      this.contents = contents;
+    }
   },
   mounted() {
 

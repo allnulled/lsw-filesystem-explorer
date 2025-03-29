@@ -21,5 +21,8 @@ The *compiled version* is because the template is injected to the JavaScript via
 
 ## API
 
+From the UI of this widget, you interact with `@allnulled/lsw-filesystem`, which is an abstract API (not bound to UI, I mean).
+
+
 
 ## Test

@@ -3,32 +3,42 @@
         <thead style="display: none;"></thead>
         <tbody>
             <tr v-if="explorer.current_node !== '/'"
-                class="treeviewer_row">
-                <td>📁</td>
-                <td v-on:click="() => go_up()">
-                    <a href="javascript:void(0)">..</a>
+                class="treeviewer_row"
+                v-on:click="() => goUp()">
+                <td class="icon_cell">📁</td>
+                <td>
+                    <a class="filename_link" href="javascript:void(0)">..</a>
                 </td>
                 <td></td>
+                <td>
+                    <button style="visibility: hidden;" class="mini" v-on:click="() => deleteNode(subnodeIndex)">❌</button>
+                </td>
             </tr>
             <template v-for="subnode, subnodeIndex, subnodeCounter in explorer.current_node_subnodes">
                 <tr class="treeviewer_row"
                     v-bind:key="'subnode_obj_' + subnodeIndex">
                     <template v-if="typeof subnode === 'object'">
-                        <td v-on:click="() => open_subnode(subnodeIndex)">📁</td>
-                        <td v-on:click="() => open_subnode(subnodeIndex)">
-                            <a href="javascript:void(0)"><b>{{ subnodeIndex }}</b></a>
+                        <td v-on:click="() => openSubnode(subnodeIndex)" class="icon_cell">📁</td>
+                        <td v-on:click="() => openSubnode(subnodeIndex)">
+                            <a class="filename_link" href="javascript:void(0)"><b>{{ subnodeIndex }}</b></a>
                         </td>
-                        <td>
-                            <button class="mini">X</button>
+                        <td style="padding: 2px;">
+                            <button class="mini nowrap" v-on:click="() => renameNode(subnodeIndex)">↔️</button>
+                        </td>
+                        <td style="padding: 2px;">
+                            <button class="mini danger_button nowrap" v-on:click="() => deleteNode(subnodeIndex)">📁 ❌</button>
                         </td>
                     </template>
                     <template v-else-if="typeof subnode === 'string'">
-                        <td v-on:click="() => open_subnode(subnodeIndex)"> </td>
-                        <td v-on:click="() => open_subnode(subnodeIndex)">
-                            <a href="javascript:void(0)">{{ subnodeIndex }}</a>
+                        <td v-on:click="() => openSubnode(subnodeIndex)" class="icon_cell">📄</td>
+                        <td v-on:click="() => openSubnode(subnodeIndex)">
+                            <a class="filename_link" href="javascript:void(0)">{{ subnodeIndex }}</a>
                         </td>
-                        <td>
-                            <button class="mini">X</button>
+                        <td style="padding: 2px;">
+                            <button class="mini nowrap" v-on:click="() => renameNode(subnodeIndex)">↔️</button>
+                        </td>
+                        <td style="padding: 2px;">
+                            <button class="mini danger_button nowrap" v-on:click="() => deleteNode(subnodeIndex)">📄 ❌</button>
                         </td>
                     </template>
                 </tr>

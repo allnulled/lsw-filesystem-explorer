@@ -6,7 +6,7 @@
     bottom: 0;
 }
 
-.lsw_filesystem_explorer .current_node_box {
+.lsw_filesystem_explorer > .current_node_box {
     display: flex;
     flex-direction: row;
     border-bottom: 1px solid black;
@@ -14,6 +14,7 @@
     font-family: Arial;
     white-space: nowrap;
     justify-content: stretch;
+    align-items: center;
 }
 .current_node_box > .current_node_filename,
 .current_node_box > .current_node_path {
@@ -41,12 +42,15 @@
     padding-top: 3px;
     padding-bottom: 4px;
 }
+.reversed {
+    transform: rotate(180deg);
+}
 
 .lsw_filesystem_explorer .filesystem_ui {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: calc(100% - 23px);
+    height: calc(100% - 25px);
 }
 .lsw_filesystem_explorer .leftside {
     flex: 1;

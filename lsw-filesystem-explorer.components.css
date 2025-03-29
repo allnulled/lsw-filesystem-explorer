@@ -1,4 +1,13 @@
-.lsw_filesystem_buttons_panel {}
+.lsw_filesystem_buttons_panel {
+    width: 100%;
+    height: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.lsw_filesystem_buttons_panel > .buttons_panel {
+    width: 100%;
+    height: 100%;
+}
 .lsw_filesystem_editor {
     position: absolute;
     top: 0;
@@ -26,7 +35,7 @@
     bottom: 0;
 }
 
-.lsw_filesystem_explorer .current_node_box {
+.lsw_filesystem_explorer > .current_node_box {
     display: flex;
     flex-direction: row;
     border-bottom: 1px solid black;
@@ -34,6 +43,7 @@
     font-family: Arial;
     white-space: nowrap;
     justify-content: stretch;
+    align-items: center;
 }
 .current_node_box > .current_node_filename,
 .current_node_box > .current_node_path {
@@ -61,12 +71,15 @@
     padding-top: 3px;
     padding-bottom: 4px;
 }
+.reversed {
+    transform: rotate(180deg);
+}
 
 .lsw_filesystem_explorer .filesystem_ui {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: calc(100% - 23px);
+    height: calc(100% - 25px);
 }
 .lsw_filesystem_explorer .leftside {
     flex: 1;
@@ -121,16 +134,28 @@
 
 .treeviewer_row {
     padding: 2px;
+    cursor: pointer;
 }
 .treeviewer_row a {
     display: inline-block;
     padding: 2px;
 }
+.treeviewer_row {
+    background-color: rgb(36, 36, 50);
+    color: white;
+}
 .treeviewer_row:nth-last-child(odd) {
-    background-color: #DDD;
+    background-color: rgb(23, 23, 30);
+    color: white;
+}
+.treeviewer_row .filename_link {
+    color: white;
 }
 .treeviewer_row:hover {
-    background-color: #CCC;
+    
+}
+.treeviewer_row:hover .filename_link {
+    color: #0F0;
 }
 table.filesystem_treeviewer_table {
     width: 100%;
@@ -147,4 +172,7 @@ table.filesystem_treeviewer_table > tbody > tr > td:nth-child(1) {
 }
 table.filesystem_treeviewer_table > tbody > tr > td:nth-child(2) {
     width: 100%;
+}
+.icon_cell {
+    padding: 4px;
 }

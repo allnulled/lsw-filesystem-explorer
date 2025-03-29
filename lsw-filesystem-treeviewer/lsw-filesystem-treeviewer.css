@@ -2,16 +2,28 @@
 
 .treeviewer_row {
     padding: 2px;
+    cursor: pointer;
 }
 .treeviewer_row a {
     display: inline-block;
     padding: 2px;
 }
+.treeviewer_row {
+    background-color: rgb(36, 36, 50);
+    color: white;
+}
 .treeviewer_row:nth-last-child(odd) {
-    background-color: #DDD;
+    background-color: rgb(23, 23, 30);
+    color: white;
+}
+.treeviewer_row .filename_link {
+    color: white;
 }
 .treeviewer_row:hover {
-    background-color: #CCC;
+    
+}
+.treeviewer_row:hover .filename_link {
+    color: #0F0;
 }
 table.filesystem_treeviewer_table {
     width: 100%;
@@ -28,4 +40,7 @@ table.filesystem_treeviewer_table > tbody > tr > td:nth-child(1) {
 }
 table.filesystem_treeviewer_table > tbody > tr > td:nth-child(2) {
     width: 100%;
+}
+.icon_cell {
+    padding: 4px;
 }
